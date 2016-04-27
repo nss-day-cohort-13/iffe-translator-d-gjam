@@ -8,15 +8,17 @@ var print = function(event){
       var beginningText = document.getElementById("beginningText").value; //variable for user-input text.
 
       //statement to determine which language option has been chosen
+var beginningText = document.getElementById("beginningText").value;
       if (langOptions === "Spanish") {
           translate.setSpanish(beginningText);
           translatedTextBox.innerHTML = translate.getSpanish();
           console.log("Spanish!");
       } else if (langOptions === "Dutch") {
-          translatedTextBox.innerHTML = "Dutch placeholder";        
-          console.log("Dutch!"); 
-      } else if (langOptions ==="Japanese") { 
-          translatedTextBox.innerHTML = "Japanese placeholder";
+          translatedTextBox.innerHTML = "Dutch placeholder";
+          console.log("Dutch!");
+      } else if (langOptions ==="Japanese") {
+        translate.setJapanese(beginningText);
+          translatedTextBox.innerHTML = translate.getJapanese();
           console.log("Japanese!");
       } else if (langOptions === "Pig-Latin") {
           translatedTextBox.innerHTML = "Pig-Latin placeholder";
@@ -31,9 +33,8 @@ var translate = (function(){
   var translatedText = ""
 
   return {
-    
   }
 
-}());
+})();
 
 translateButton.addEventListener("click", print);
