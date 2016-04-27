@@ -12,9 +12,8 @@ var translate = (function(original){
 
 var newJapanese = "";
 
-return {
 
-  setJapanese: function(beginningText){
+  original.setJapanese = function(beginningText){
     var anArray = beginningText.split(" ");
     console.log("an array", anArray);
     anArray.forEach(function(word){
@@ -24,10 +23,10 @@ return {
     });
 
   },
-  getJapanese: function() {
+  original.getJapanese = function() {
     return newJapanese;
   }
-}
 
+return original;
 
 }(translate));

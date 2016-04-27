@@ -13,9 +13,9 @@ var translate = (function(oldTranslate) {
 //empty variable to put the new spanish phrase into. Unique for each language at this point.
   var translatedtoSpanish = "";
   
-    return {
+    
 
-     setSpanish: function(beginningText){ 
+     oldTranslate.setSpanish = function(beginningText){ 
       //splits the received phrase into an array to loop through. 
       var EnglishArray = beginningText.split(" ");
       console.log("english array", EnglishArray);
@@ -34,9 +34,10 @@ var translate = (function(oldTranslate) {
         //reassigns the resulting array into the outside variable 
         translatedtoSpanish = newSpecialWords;
       },
-    getSpanish: function() {
+    oldTranslate.getSpanish = function() {
       return translatedtoSpanish;
     }  
-  }
+  
+  return oldTranslate;
 
 }(translate));
