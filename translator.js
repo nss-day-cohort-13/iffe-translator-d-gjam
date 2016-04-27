@@ -30,10 +30,6 @@ var beginningText = document.getElementById("beginningText").value;
 
 //main IFFE variable.
 var translate = (function(){
-  var translatedText = ""
-
-  return {
-  }
 
 })();
 
