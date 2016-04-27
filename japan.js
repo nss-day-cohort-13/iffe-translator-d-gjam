@@ -1,26 +1,33 @@
 
-var print = function(translator){
-       //put this variable inside the function so it doesn't get assigned until the button is clicked!
-      var langOptions = document.getElementById("langOptions").value;
+var translate = (function(original){
 
-    nihongo = {
-     merry: "meri",
-     christmas: "kurisumasu",
+   var nihongo = {
+     Merry: "meri",
+     Christmas: "kurisumasu",
      and: "soshite",
-     happy: "happi",
-     new: "atarashi",
-     year: "toshi"
+     Happy: "happi",
+     New: "atarashi",
+     Year: "toshi"
     }
 
-translator.japanese = function() {
-  var input = document.getElementById("beginningText").value;
-  var inputArray = beginningText.split(" ");
-  var output = ("");
+var newJapanese = "";
 
+return {
 
+  setJapanese: function(beginningText){
+    var anArray = beginningText.split(" ");
+    console.log("an array", anArray);
+    anArray.forEach(function(word){
+      newJapanese += `${nihongo[word]} `;
 
+      console.log("newJapanese", newJapanese);
+    });
+
+  },
+  getJapanese: function() {
+    return newJapanese;
+  }
 }
 
-})(print);
 
-translateButton.addEventListener("click", print);
+}(translate));
