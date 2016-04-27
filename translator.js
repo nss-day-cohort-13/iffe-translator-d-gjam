@@ -13,25 +13,18 @@ var print = function(event){
           translatedTextBox.innerHTML = translate.getSpanish();
           console.log("Spanish!");
           console.log("input text", beginningText.value);
-      }
-
-      else if (langOptions === "Dutch") {
-          translatedTextBox.innerHTML = translate.dutchSpeak;
+      } else if (langOptions === "Dutch") {
+          translate.setdutch(beginningText);
+          translatedTextBox.innerHTML = translate.getdutch();
           console.log("Dutch!");
           console.log("input text", beginningText.value);
-      }
-
-      else if (langOptions ==="Japanese") {
+      } else if (langOptions ==="Japanese") {
           translatedTextBox.innerHTML = "Japanese placeholder";
           console.log("Japanese!");
-      }
-
-      else if (langOptions === "Pig-Latin") {
+      } else if (langOptions === "Pig-Latin") {
           translatedTextBox.innerHTML = "Pig-Latin placeholder";
           console.log("Pig-Latin!");
-      }
-
-      else {
+      } else {
           alert("HEY, dumbass, pick a language");
       }
     };
@@ -42,7 +35,6 @@ var translate = (function(){
 
   return {
 
-  }
   }
 }());
 

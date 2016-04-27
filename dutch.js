@@ -1,7 +1,5 @@
 //This is the javascript page for the Dutch translation of holiday phrases - AE
-
-var translate = (function (dutchTranslation) {
-  var dutchTranslation = "";
+var translate = (function (newTranslation) {
 
   var dutchPhrases = {
     Merry: "Vrolijk",
@@ -12,24 +10,34 @@ var translate = (function (dutchTranslation) {
     Year: "Jaar"
   };
 
-  return {
+// empty variable for the translation
+  var dutchTranslation = "";
 
-    setdutch: function(beginningText) {
+
+
+    newTranslation.setdutch = function(beginningText){
 
       var englishPhrase = beginningText.split(" ");
-      console.log("User Inputs", englishPhrase.value);
+      console.log("User Inputs", englishPhrase);
+      var newPhrase = "";
 
-      englishPhrase.forEach(function(phrase) {
-        dutchTranslation += `${dutchPhrases[phrase]}`;
-        console.log("dutch speak variable", dutchTranslation);
-      })
-    },
+        englishPhrase.forEach(function(phrase){
+          if (dutchPhrases[phrase] === undefined) {
+            alert("this app only works with one phrase right now!")
+          }
+          else {
+            newPhrase += `${dutchPhrases[phrase]} `;
+          };
+          console.log("newPhrase", newPhrase);
+          dutchTranslation = newPhrase;
+        });
+    };
 
-    getdutch: function() {
+    newTranslation.getdutch = function() {
       return dutchTranslation;
     }
 
-  };
+    return newTranslation;
 
 }(translate));
 
