@@ -1,7 +1,7 @@
 
-var beginningText = document.getElementById("beginningText")
+var beginningText = document.getElementById("beginningText") /* incoming text from user */
 var translateButton = document.getElementById("translateButton");
-var translatedTextBox = document.getElementById("translatedText");
+var translatedTextBox = document.getElementById("translatedText"); /* text in new language */
 
 var print = function(event){
        //put this variable inside the function so it doesn't get assigned until the button is clicked!
@@ -13,9 +13,9 @@ var print = function(event){
           translatedTextBox.innerHTML = translate.getSpanish();
           console.log("Spanish!");
       } else if (langOptions === "Dutch") {
-          translatedTextBox.innerHTML = "Dutch placeholder";        
-          console.log("Dutch!"); 
-      } else if (langOptions ==="Japanese") { 
+          translatedTextBox.innerHTML = "Dutch placeholder";
+          console.log("Dutch!");
+      } else if (langOptions ==="Japanese") {
           translatedTextBox.innerHTML = "Japanese placeholder";
           console.log("Japanese!");
       } else if (langOptions === "Pig-Latin") {
@@ -28,17 +28,17 @@ var print = function(event){
 
 
 var translate = (function(){
-  var translatedText = ""
+  var translatedText = "";
 
   return {
     setSpanish: function () {
-      //get beginning text. probably a var textToTranslate = beginningText.innerHTML. 
-      //do some stuff like .split to make it an array, .map to translate, and then blah all the stuff. 
-      translatedText = beginningText.innerHTML;//this is just to demonstrate, the translated text will be the result of all the stuff. 
+      //get beginning text. probably a var textToTranslate = beginningText.innerHTML.
+      //do some stuff like .split to make it an array, .map to translate, and then blah all the stuff.
+      translatedText = beginningText.innerHTML;//this is just to demonstrate, the translated text will be the result of all the stuff.
     },
     getSpanish: function() {
       return translatedText;
-    } 
+    }
   }
 
 }());
